@@ -8,11 +8,11 @@ dependencies:
     - ansible-galaxy install -r requirements-ansible.yml
 
 deployment:
-  staging:
-    branch: master
+  release:
+    tag: /[0-9]+\.[0-9]+\.[0-9]+/
     commands:
       - echo -e "[web]\n${PRODUCTION_DEPLOY_HOST}" > inventory.yml
       - >
         env
-        nginx_static_version=$CIRCLE_TAG
+        NGINX_STATIC_VERSION=$CIRCLE_TAG
         ansible-playbook deploy.yml -i inventory.yml
