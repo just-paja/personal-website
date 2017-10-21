@@ -1,0 +1,13 @@
+---
+- name: Deploy the project
+  hosts: web
+  roles:
+    - role: practical-ansible.nginx-redirect
+      nginx_redirect_project_name: pavel-zak-global
+      nginx_redirect_server_name: pavelzak.cz www.pavelzak.cz www.pavel.zak.global
+      nginx_redirect_destination_domain: pavel.zak.global
+    - role: practical-ansible.nginx-static
+      nginx_static_project_name: pavel-zak-global
+      nginx_static_server_name: pavel.zak.global
+      nginx_static_project_environment: production
+      nginx_static_directory: src
