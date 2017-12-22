@@ -17,21 +17,29 @@
         height: 100%;
       }
 
+      a,
+      a:link,
+      a:visited {
+        color: #feda4a;
+      }
+
       .bg-black {
         background: #000;
         padding: 3rem 0;
         border-top: 1px solid rgba(214,214,214,.25);
       }
 
+      hr,
       .card,
       .list-group-item {
         background: transparent;
+        border-color: rgba(214,214,214,.25);
         border-color: rgba(214,214,214,.25);
       }
 
       .video-frame {
       	position: relative;
-      	padding-bottom: 56.25%; /* 16:9 */
+      	padding-bottom: 40%;
       	padding-top: 25px;
       	height: 0;
         margin-bottom: 3rem;
@@ -58,14 +66,14 @@
         display: flex;
         justify-content: center;
         position: relative;
-        height: 800px;
+        height: 700px;
         color: #feda4a;
         font-family: 'Pathway Gothic One', sans-serif;
         font-size: 400%;
         font-weight: 600;
         letter-spacing: 6px;
         line-height: 150%;
-        perspective: 250px;
+        perspective: 200px;
         text-align: justify;
         overflow: hidden;
       }
@@ -75,6 +83,7 @@
         top: 9999px;
         transform-origin: 50% 100%;
         animation: crawl 60s linear;
+        animation-iteration-count: infinite;
       }
 
       .crawl p {
@@ -113,6 +122,7 @@
     <div class="container">
       <h1>Sith to SIT</h1>
       <p class="lead">První teaser trailer na fiktivní film z prostředí Hvězdných válek, který vysvětluje odkud přišel Siťák.</p>
+      <hr />
     </div>
 
     <section class="star-wars">
