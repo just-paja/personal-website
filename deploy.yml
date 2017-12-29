@@ -11,3 +11,8 @@
       nginx_static_server_name: pavel.zak.global
       nginx_static_project_environment: production
       nginx_static_directory: src/
+    - role: practical-ansible.nginx-static
+      nginx_static_project_name: global-zak
+      nginx_static_server_name: zak.global
+      nginx_static_project_environment: production
+      nginx_static_directory: root/
