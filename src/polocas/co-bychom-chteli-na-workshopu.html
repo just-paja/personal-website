@@ -9,21 +9,24 @@
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <script>
     const data = [
+      // { name: 'Konverzační scény', bugs: 1 },
+      // { name: 'Přednes', bugs: 1 },
+      // { name: 'Rýmování', bugs: 1 },
+      // { name: 'Slovní zásoba', bugs: 1 },
+      // { name: 'Zpěv', bugs: 2 },
       { name: 'Držení postavy', amuses: 1, bugs: 4 },
       { name: 'Hraní mimo scénu', bugs: 1 },
       { name: 'Hraní obecně', amuses: 2 },
       { name: 'Kompozice scény', amuses: 1 },
       { name: 'Komunikace s publikem', amuses: 1, bugs: 2 },
-      // { name: 'Konverzační scény', bugs: 1 },
       { name: 'Mimika', amuses: 3, bugs: 1 },
       { name: 'Nástup na scénu', bugs: 1 },
       { name: 'Oční kontakt', bugs: 1 },
       { name: 'Pohotovost', bugs: 2 },
-      { name: 'Práce s barvou hlasu', amuses: 1 },
       { name: 'Práce s důležitostí herců', bugs: 1 },
       { name: 'Práce s focusem', bugs: 2 },
-      { name: 'Práce s gesty', amuses: 1, bugs: 1 },
-      { name: 'Práce s hlasem', bugs: 4 },
+      { name: 'Práce s gesty', amuses: 2, bugs: 1 },
+      { name: 'Práce s hlasem', amuses: 1, bugs: 4 },
       { name: 'Práce s imaginárním prostředím', amuses: 1 },
       { name: 'Práce s pantomimou', amuses: 1, bugs: 2 },
       { name: 'Práce s pohybem', bugs: 2 },
@@ -31,29 +34,27 @@
       { name: 'Práce s prostorem', amuses: 3, bugs: 2 },
       { name: 'Práce s rekvizitou', amuses: 1 },
       { name: 'Práce s tělem', bugs: 4 },
-      // { name: 'Přednes', bugs: 1 },
       { name: 'Přijímání potlesku', bugs: 1 },
       { name: 'Rytmus scény', amuses: 1 },
-      // { name: 'Rýmování', bugs: 1 },
-      // { name: 'Slovní zásoba', bugs: 1 },
       { name: 'Spektrum postav', bugs: 1 },
       { name: 'Spěchání', bugs: 1 },
       { name: 'Uvěřitelnost projevu', bugs: 2 },
       { name: 'Vnímání kolegů na jevišti', bugs: 3 },
       { name: 'Zbytečná originalita', bugs: 1 },
-      // { name: 'Zpěv', bugs: 2 },
     ];
 
     const categories = [];
     const amusementSeries = {
-      name: 'Co nás baví',
-      type: 'line',
+      color: "#199638",
       data: [],
+      name: 'Co nás baví',
+      type: 'area',
     };
     const bugSeries = {
-      name: 'Co nám nejde',
-      type: 'line',
+      color: '#7cb5ec',
       data: [],
+      name: 'Co nás trápí',
+      type: 'area',
     };
     let maxValue = 0;
 
@@ -95,13 +96,15 @@
           min: 0,
           max: maxValue,
         },
-
         series: [amusementSeries, bugSeries]
       });
     });
   </script>
   <style>
     body {
+      overflow: hidden;
+    }
+    .chart {
       overflow: auto;
     }
     #container {
