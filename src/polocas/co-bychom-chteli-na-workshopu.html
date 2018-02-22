@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/highcharts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/js/highcharts-more.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/css/highcharts.css" />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
   <script>
     const data = [
       { name: 'Držení postavy', amuses: 1, bugs: 4 },
@@ -70,7 +72,6 @@
     }
 
     window.addEventListener('load', function() {
-      console.log('loaded');
       Highcharts.chart('container', {
         chart: {
           polar: true,
@@ -99,13 +100,111 @@
     });
   </script>
   <style>
+    body {
+      overflow: auto;
+    }
     #container {
       height: 800px;
+      min-width: 600px;
     }
   </style>
 
 </head>
 <body>
-  <div id="container" />
+  <div class="chart">
+    <div id="container" />
+  </div>
+
+  <hr />
+
+  <div class="container">
+    <h1>Malý průzkum</h1>
+
+    <p>Položil jsem skupině tři otázky, na konci dokumentu je shrnutí:</p>
+
+    <ol>
+      <li>Která herecká dovednost vám podle vás jde a nejvíce vás baví?</li>
+      <li>Která herecká dovednost vám jde nejméně (nebo vás třeba frustruje nebo prostě nevíte jak na to)?</li>
+      <li>Kterou hereckou dovednost byste doporučili k zlepšování jednomu z vašich kolegů?</li>
+    </ol>
+
+    <h2>Michaela Pappová</h2>
+    <ol>
+      <li>nonverbální vyjadřování se - práce s mimikou, tóny hlasu a gesty</li>
+      <li>práce s tělem</li>
+      <li>spolupráce s ostatními (všem)</li>
+    </ol>
+
+    <h2>Ondřej Svoboda</h2>
+    <ol>
+      <li>Baví - mimické vyjádření emocí</li>
+      <li>Nejde - hraní, i když zrovna nehraju - nevypadnout z role, když na mě není fokus</li>
+      <li>Zlepšit (včetně mě, nikdo konkrétní) - plynulé, dynamické a uvěřitelné vyjadřování, mluvení</li>
+    </ol>
+
+    <h3>Motivační dopis</h3>
+
+    <p>Rád bych dosáhl větší konzistence mezi vyjadřovacími postředky, které používám. Třeba aby tělo neříkalo jednu věc a hlas jinou. Věřím, že to povede k větší uvěřitelnosti mého projevu na jevišti, větší autentičnosti.</p>
+
+    <h2>Daniel Kádner</h2>
+
+    <p>Také jsem se trochu pral s tím, jak to uchopit. Popravdě bych hlavně potřeboval, aby mě viděl hrát někdo, kdo se vyzná a řekl mě co je blbě a na co se zaměřit..</p>
+    <ol>
+      <li>Baví mě hraní celé dohromady a to jak se to dá dělat různě. V impru obvykle není čas si moc užívat mlčení, takže asi to.</li>
+      <li>Držení postav ve scéně - vypadávám z nich fyzicky. Trápí nás to všecky.</li>
+      <li>Často nehrajeme ale jen mluvíme. Pohyb ani hlas neodpovídá obsahu. Opět to děláme všichni.</li>
+    </ol>
+
+    <h2>Kamila Nováková</h2>
+    <ol>
+      <li>Nejvíc mě baví práce s tělem, hledat/vytvářet postavu skrz tělesný napětí. Najít v sobě nějakou emoci a dál s ní pracovat a využít v definování /zahrání charakteru. V daný okamžik umocnit sama sebe. (Takovýto „A nepřemejšlelas někdy o fyzickym divadlu?“ „Já na něj nemám fyzičku.“)</li>
+      <li>„Frustrujou“ mě konverzační scénky, neb mi začne šrotovat mozek, zamrznu a vypadávám z role. Chci zjistit jak si roli udržet a naučit se to. V rámci dialogů bych ráda zlepšila svoji pohotovost (nebo možná lépe formulováno – ráda bych nějakou získala) a našla si v nich něco, co mě bude bavit a ne děsit.</li>
+      <li>Závěrečné doporučení (asi všem včetně sobě samé) je zlepšení vzájemného vnímání na jevišti. Vnímat sebe v rámci scény jako jednotku určitého celku, která funguje ve spolupráci s ostatními. Nezapomínat na ostatní charaktery a stejně tak nezapomínat, že jedním z těch charakterů jsem já, hrát (si) s nimi. Přijmout určitou hiearchii, že někdo je postavou hlavnější, někdo spíš postavou vedlejší, někdo kulisou… a zkoušet různá postavení na tomto „žebříčku“. Někdy někoho pošťouchnout a jindy zas ustoupit. </li>
+    </ol>
+
+    <h2>Markéta Nováková</h2>
+    <ol>
+      <li>Nejvíc mě baví experimentovat, vrhat se do věcí po hlavě (bez toho snad ani impro dělat nejde), zkoušet neozkoušené, hledat nové cesty, jen tak blbnout.</li>
+      <li>Frustruje mě oční kontakt. Kontakt / komunikace s publikem, komunikace s hereckým partnerem na jevišti, kam se dívat, jak a kde stát / hýbat se, abych nekradla fokus, když ho nechci, a abych fokus měla, když ho chci. Abych fokus vydržela a neprchala z něj. Jak vnímat vše najednou / jak si být všeho najednou vědoma (sebe, zbytku jeviště, diváků), příp. jak (účinně) střídavě věnovat pozornost (v různé míře) různým věcem. Jak udržet tělesné napětí / hlas / postavu. Jak se neblokovat (ve vyjádření). Práce s hlasem / jevištní řeč / přednes.</li>
+      <li>(zvýšit) Citlivost vůči / uvědomění si (sebe, ostatních na jevišti, okolního prostředí, ale koneckonců i těch diváků).</li>
+    P.S.: Každý den bych asi napsala jiné věci.
+    P.P.S.: A v podstatě souhlasím se vším, co napsali ostatní v komentářích výše.
+    </ol>
+
+    <h2>Jan Formánek</h2>
+    <ol>
+      <li>Baví mě hrát si s výrazem (od mimiky až po gesta), s prostředím (předměty v okolí i prostředím jako takovým)</li>
+      <li>Zpěv (tady byla překonána bariéra studu, je problém s provedením :-) ); rýmování (jak kdy, někdy jde, někdy nejde, stále kladu větší důraz na smysl a při tom mi nejde vkládat rýmy); konstantní využívání celého prostoru, méně vysvětlování + více smysluplného pohybu</li>
+      <li>Dát si více času, je-li potřeba; výraznější vstup do scénky (zejména pro herce, aby věděli, na co reagovat); více pana normálního, než pana kuriozity</li>
+    </ol>
+
+    <h2>Marcel Mika</h2>
+    <ol>
+      <li>Hlidani si reakci publika. Napriklad tusit, kdy se divaci zacnou smat a pak si chvili pockat, popripade kdyz se nesmeji, rychle neco udelat/rict navic. Zkratka upravovat tempo na zakladne konstantniho sledovani feedbacku od publika.</li>
+      <li>Dlouhodobé držení těla, Přijímání potlesku (mam pocit ze se akorat pitome culim), slovni zasoba</li>
+      <li>Předávání focusu, Přijímání focusu</li>
+    </ol>
+
+    <h2>Pavel Wieser</h2>
+    <ol>
+      <li>Baví mě využívat celé jeviště a třeba přesunu po něm na vyjádření změny vztahu postav. Práce s mizanscénou.</li>
+      <li>Udržet postavu a veřit si v tom. Neodprdnout se.</li>
+      <li>Rozšířit si spektrum postav na takové i víc vzdálené od jeho civilu.</li>
+    </ol>
+
+    <h2>Kačka Nováková</h2>
+    <ol>
+      <li>Baví mě vytvářet si postavy a vdechnout jim život.</li>
+      <li>Vyjádření prostoru, a základy pantomimy - vyjádření činnosti, aby bylo poznat, co fakt dělám :D</li>
+      <li>Zůstat v postavě.</li>
+    </ol>
+
+    <h2>Víťa Vršník</h2>
+    <ol>
+      <li>Baví mě vytvářet postavy a zapojovat je do situací</li>
+      <li>Nejde mi zpěv, výrazové udržování role po celou dobu a rychlé formulování vět.</li>
+      <li>Lepší souhru mezi verbálním projevem a pantomimickou gestikulací postav</li>
+    </ol>
+  </div>
 </body>
 </html>
