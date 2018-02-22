@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/highcharts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/js/highcharts-more.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highcharts/6.0.7/css/highcharts.css" />
+  <script>
+    const data = [
+      { name: 'Držení postavy', amuses: 1, bugs: 4 },
+      { name: 'Hraní mimo scénu', bugs: 1 },
+      { name: 'Hraní obecně', amuses: 2 },
+      { name: 'Kompozice scény', amuses: 1 },
+      { name: 'Komunikace s publikem', amuses: 1, bugs: 2 },
+      // { name: 'Konverzační scény', bugs: 1 },
+      { name: 'Mimika', amuses: 3, bugs: 1 },
+      { name: 'Nástup na scénu', bugs: 1 },
+      { name: 'Oční kontakt', bugs: 1 },
+      { name: 'Pohotovost', bugs: 2 },
+      { name: 'Práce s barvou hlasu', amuses: 1 },
+      { name: 'Práce s důležitostí herců', bugs: 1 },
+      { name: 'Práce s focusem', bugs: 2 },
+      { name: 'Práce s gesty', amuses: 1, bugs: 1 },
+      { name: 'Práce s hlasem', bugs: 4 },
+      { name: 'Práce s imaginárním prostředím', amuses: 1 },
+      { name: 'Práce s pantomimou', amuses: 1, bugs: 2 },
+      { name: 'Práce s pohybem', bugs: 2 },
+      { name: 'Práce s postavou', amuses: 1, bugs: 3 },
+      { name: 'Práce s prostorem', amuses: 3, bugs: 2 },
+      { name: 'Práce s rekvizitou', amuses: 1 },
+      { name: 'Práce s tělem', bugs: 4 },
+      // { name: 'Přednes', bugs: 1 },
+      { name: 'Přijímání potlesku', bugs: 1 },
+      { name: 'Rytmus scény', amuses: 1 },
+      // { name: 'Rýmování', bugs: 1 },
+      // { name: 'Slovní zásoba', bugs: 1 },
+      { name: 'Spektrum postav', bugs: 1 },
+      { name: 'Spěchání', bugs: 1 },
+      { name: 'Uvěřitelnost projevu', bugs: 2 },
+      { name: 'Vnímání kolegů na jevišti', bugs: 3 },
+      { name: 'Zbytečná originalita', bugs: 1 },
+      // { name: 'Zpěv', bugs: 2 },
+    ];
+
+    const categories = [];
+    const amusementSeries = {
+      name: 'Co nás baví',
+      type: 'line',
+      data: [],
+    };
+    const bugSeries = {
+      name: 'Co nám nejde',
+      type: 'line',
+      data: [],
+    };
+    let maxValue = 0;
+
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+      categories.push(item.name);
+      amusementSeries.data.push(item.amuses || 0);
+      bugSeries.data.push(item.bugs || 0);
+
+      if (item.amuses > maxValue) {
+        maxValue = item.amuses;
+      }
+
+      if (item.bugs > maxValue) {
+        maxValue = item.bugs;
+      }
+    }
+
+    window.addEventListener('load', function() {
+      console.log('loaded');
+      Highcharts.chart('container', {
+        chart: {
+          polar: true,
+        },
+        title: {
+          text: 'Co bychom chtěli na workshopu',
+        },
+        pane: {
+          startAngle: 0,
+          endAngle: 360,
+        },
+        xAxis: {
+          categories: categories,
+          tickmarkPlacement: 'on',
+        },
+
+        yAxis: {
+          gridLineInterpolation: 'polygon',
+          lineWidth: 0,
+          min: 0,
+          max: maxValue,
+        },
+
+        series: [amusementSeries, bugSeries]
+      });
+    });
+  </script>
+  <style>
+    #container {
+      height: 800px;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="container" />
+</body>
+</html>
