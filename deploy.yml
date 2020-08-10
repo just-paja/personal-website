@@ -6,13 +6,16 @@
       nginx_redirect_project_name: global-zak-pavel
       nginx_redirect_server_name: pavelzak.cz www.pavelzak.cz www.pavel.zak.global
       nginx_redirect_destination_domain: pavel.zak.global
+      become: true
     - role: practical-ansible.nginx_static
       nginx_static_project_name: global-zak-pavel
       nginx_static_server_name: pavel.zak.global
       nginx_static_project_environment: production
       nginx_static_directory: src/
+      become: true
     - role: practical-ansible.nginx_static
       nginx_static_project_name: global-zak
       nginx_static_server_name: zak.global
       nginx_static_project_environment: production
       nginx_static_directory: root/
+      become: true
