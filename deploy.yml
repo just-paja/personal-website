@@ -4,6 +4,7 @@
   roles:
     - role: practical-ansible.nginx_redirect
       project_name: global-zak-pavel-redirects
+      project_version: '{{ lookup("env", "NGINX_STATIC_VERSION") }}'
       server_names: pavelzak.cz,www.pavelzak.cz,www.pavel.zak.global
       destination_domain: pavel.zak.global
       admin_email: pavel@zak.global
@@ -14,8 +15,9 @@
   roles:
     - role: practical-ansible.nginx_static
       project_name: global-zak-pavel
-      server_names: pavel.zak.global
       project_environment: production
+      project_version: '{{ lookup("env", "NGINX_STATIC_VERSION") }}'
+      server_names: pavel.zak.global
       admin_email: pavel@zak.global
       dir_source: src/
       become: true
@@ -25,8 +27,9 @@
   roles:
     - role: practical-ansible.nginx_static
       project_name: global-zak
-      server_names: zak.global
       project_environment: production
+      project_version: '{{ lookup("env", "NGINX_STATIC_VERSION") }}'
+      server_names: zak.global
       admin_email: pavel@zak.global
       dir_source: root/
       become: true
